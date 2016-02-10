@@ -1,4 +1,4 @@
-package com.techjumper.myappdemo;
+package com.techjumper.myappdemo.ui.activity;
 
 import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.techjumper.corelib.utils.common.ActivityUtils;
 import com.techjumper.corelib.utils.window.StatusbarHelper;
+import com.techjumper.myappdemo.R;
 
 public class MainActivity extends ListActivity {
 
-    private String[] dataList = new String[]{"MVP"};
+    private String[] dataList = new String[]{"MVP", "Shade"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,9 @@ public class MainActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         switch (dataList[position]) {
             case "MVP":
+                break;
+            case "Shade":
+                ActivityUtils.start(this, ShadeActivity.class);
                 break;
         }
         super.onListItemClick(l, v, position, id);
