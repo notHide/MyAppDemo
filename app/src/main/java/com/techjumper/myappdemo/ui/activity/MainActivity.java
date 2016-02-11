@@ -1,7 +1,6 @@
 package com.techjumper.myappdemo.ui.activity;
 
 import android.app.ListActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,6 +9,8 @@ import android.widget.ListView;
 import com.techjumper.corelib.utils.common.ActivityUtils;
 import com.techjumper.corelib.utils.window.StatusbarHelper;
 import com.techjumper.myappdemo.R;
+
+
 
 public class MainActivity extends ListActivity {
 
@@ -24,7 +25,7 @@ public class MainActivity extends ListActivity {
 
         StatusbarHelper.from(this)
                 .setTransparentStatusbar(true)
-                .setLightStatusBar(true)
+                .setLightStatusBar(false)
                 .setLayoutRoot(findViewById(android.R.id.list))
                 .setNoActionBar(true)
                 .process();

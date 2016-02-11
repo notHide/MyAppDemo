@@ -27,7 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         initData(savedInstanceState);
         mViewRoot = inflateView(savedInstanceState);
-        setContentView(mViewRoot);
+        if (mViewRoot != null) setContentView(mViewRoot);
         initView(savedInstanceState);
         find(android.R.id.content).post(new Runnable() {
             @Override
@@ -38,7 +38,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         StatusbarHelper.from(this)
                 .setNoActionBar(true)
-                .setLightStatusBar(true)
+                .setLightStatusBar(false)
                 .setTransparentStatusbar(true)
                 .setLayoutRoot(mViewRoot)
                 .process();
@@ -55,18 +55,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         return (T) getLayoutInflater().inflate(id, null);
     }
 
-    protected Bundle getBundle() {
-        if (getIntent() == null
-                || getIntent().getExtras() == null) {
+    protected Bundle getIntentBundle() {
+        if (getIntent() == null || getIntent().getExtras() == null)
             return new Bundle();
-        }
-        return getIntent().getExtras();
-    }
-
-    @SuppressWarnings("unchecked")
-    protected <T> T getExtra(String key) {
-        return (T) getBundle().get(key);
-
+        else
+            return getIntent().getExtras();
     }
 
     protected abstract void initData(Bundle savedInstanceState);
