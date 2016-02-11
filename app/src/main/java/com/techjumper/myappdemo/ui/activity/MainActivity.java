@@ -11,7 +11,6 @@ import com.techjumper.corelib.utils.window.StatusbarHelper;
 import com.techjumper.myappdemo.R;
 
 
-
 public class MainActivity extends ListActivity {
 
     private String[] dataList = new String[]{"MVP", "Shade"};
@@ -36,6 +35,7 @@ public class MainActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         switch (dataList[position]) {
             case "MVP":
+                ActivityUtils.start(this, MVPActivity.class);
                 break;
             case "Shade":
                 ActivityUtils.start(this, ShadeActivity.class);

@@ -1,6 +1,6 @@
 package com.techjumper.myappdemo.others;
 
-import com.techjumper.corelib.JumperApplication;
+import com.techjumper.corelib.others.JumperApplication;
 import com.techjumper.corelib.utils.common.JLog;
 
 /**

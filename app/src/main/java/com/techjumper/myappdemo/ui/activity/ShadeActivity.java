@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.techjumper.corelib.ui.activity.BaseActivity;
 import com.techjumper.myappdemo.R;
 
 

@@ -14,8 +14,13 @@ android {
     }
     buildTypes {
         release {
+            minifyEnabled true
+            proguardFile project.PROGUARD_FILE
+        }
+        debug {
             minifyEnabled false
             proguardFile project.PROGUARD_FILE
+
         }
     }
 }
