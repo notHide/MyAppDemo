@@ -2,9 +2,13 @@ package com.techjumper.myappdemo.presenter;
 
 import android.os.Bundle;
 
+import com.techjumper.corelib.rx.RxBus;
 import com.techjumper.corelib.mvp.presenter.BaseActivityPresenterImp;
-import com.techjumper.corelib.utils.common.JLog;
+import com.techjumper.corelib.utils.rxtools.RxUtils;
 import com.techjumper.myappdemo.ui.activity.MVPActivity;
+
+import rx.Subscription;
+import rx.functions.Action1;
 
 /**
  * * * * * * * * * * * * * * * * * * * * * * *
@@ -14,20 +18,32 @@ import com.techjumper.myappdemo.ui.activity.MVPActivity;
  **/
 public class MVPPresenter extends BaseActivityPresenterImp<MVPActivity> {
 
+    private Subscription subscribe;
+
     @Override
     public void initData(Bundle savedInstanceState) {
-        JLog.d("initData()");
+        subscribe = RxBus.INSTANCE.toObserverable().subscribe(new Action1<Object>() {
+            @Override
+            public void call(Object o) {
+                getView().log("RxBus Running");
+            }
+        });
     }
 
     @Override
     public void onViewInited(Bundle savedInstanceState) {
-        JLog.d("onViewInited()");
         log();
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        RxUtils.unsubscribeIfNotNull(subscribe);
+    }
+
     public void log() {
-        JLog.d("这是 MVPPresenter 打出的 Log");
-        getView().showDialog(getClass().getSimpleName());
+        getView().sendMessage(getClass().getSimpleName());
+        getView().showDialog();
     }
 
 }
