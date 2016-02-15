@@ -30,10 +30,16 @@ ext {
     compileSdkVersion = 23
     buildToolsVersion = '23.0.2'
 
+    //corelib
     supportLibraryVersion = '23.1.1'
     rxJava = '1.1.0'
     rxAndroid = '1.1.0'
     rxBinding = '0.3.0'
     materialDialogs = '0.8.5.4'
     threetenabp = '1.0.3'
+    butterKnife = '7.0.1'
+    proguardRules = '1.1.0.0'
+
+    //lib2
+    realmAndroid = '0.87.0'
 }

@@ -1,4 +1,4 @@
-package com.techjumper.myappdemo.presenter;
+package com.techjumper.myappdemo.presenter.activity;
 
 import android.os.Bundle;
 
@@ -22,11 +22,8 @@ public class MVPPresenter extends BaseActivityPresenterImp<MVPActivity> {
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        subscribe = RxBus.INSTANCE.toObserverable().subscribe(new Action1<Object>() {
-            @Override
-            public void call(Object o) {
-                getView().log("RxBus Running");
-            }
+        subscribe = RxBus.INSTANCE.asObservable().subscribe(o -> {
+            getView().log("RxBus Running");
         });
     }
 

@@ -24,11 +24,16 @@
         <activity
             android:name=".ui.activity.ShadeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".ui.activity.MVPActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.FragmentTestActivity"
+            android:screenOrientation="sensor"
+            />
     </application>
 
 </manifest>

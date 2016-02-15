@@ -13,7 +13,7 @@ import com.techjumper.myappdemo.R;
 
 public class MainActivity extends ListActivity {
 
-    private String[] dataList = new String[]{"MVP", "Shade"};
+    private String[] dataList = new String[]{"MVP", "Shade", "FragmentSwitchTest"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,9 @@ public class MainActivity extends ListActivity {
                 break;
             case "Shade":
                 ActivityUtils.start(this, ShadeActivity.class);
+                break;
+            case "FragmentSwitchTest":
+                ActivityUtils.start(this, FragmentTestActivity.class);
                 break;
         }
         super.onListItemClick(l, v, position, id);

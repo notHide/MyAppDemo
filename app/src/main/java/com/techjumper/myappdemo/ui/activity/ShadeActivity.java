@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import com.techjumper.corelib.ui.activity.BaseActivity;
 import com.techjumper.myappdemo.R;
 
+import butterknife.Bind;
+
 
 /**
  * * * * * * * * * * * * * * * * * * * * * * *
@@ -16,7 +18,8 @@ import com.techjumper.myappdemo.R;
  **/
 public class ShadeActivity extends BaseActivity {
 
-    private ImageView mIV1;
+    @Bind(R.id.iv_1)
+    ImageView mIV1;
 
     @Override
     protected void initData(Bundle savedInstanceState) {
@@ -29,7 +32,6 @@ public class ShadeActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        mIV1 = find(R.id.iv_1);
     }
 
     @Override

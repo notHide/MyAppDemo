@@ -11,14 +11,11 @@ import com.techjumper.corelib.utils.file.PreferenceUtils;
 import com.techjumper.corelib.ui.activity.BaseViewActivity;
 import com.techjumper.corelib.utils.common.DateUtils;
 import com.techjumper.corelib.utils.common.JLog;
-import com.techjumper.corelib.utils.rxtools.RxCountdown;
 import com.techjumper.corelib.utils.window.DialogUtils;
-import com.techjumper.myappdemo.presenter.MVPPresenter;
+import com.techjumper.myappdemo.presenter.activity.MVPPresenter;
 
 import rx.Observable;
 import rx.Subscriber;
-import rx.functions.Action0;
-import rx.functions.Func1;
 
 /**
  * * * * * * * * * * * * * * * * * * * * * * *
