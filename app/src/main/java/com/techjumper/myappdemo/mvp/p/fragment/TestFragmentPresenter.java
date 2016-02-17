@@ -1,11 +1,11 @@
-package com.techjumper.myappdemo.presenter.fragment;
+package com.techjumper.myappdemo.mvp.p.fragment;
 
 import android.os.Bundle;
 
 import com.techjumper.corelib.mvp.presenter.BaseFragmentPresenterImp;
 import com.techjumper.corelib.rx.RxBus;
 import com.techjumper.myappdemo.R;
-import com.techjumper.myappdemo.ui.fragment.TestFragment;
+import com.techjumper.myappdemo.mvp.v.fragment.TestFragment;
 
 import butterknife.OnClick;
 

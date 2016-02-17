@@ -1,4 +1,4 @@
-package com.techjumper.myappdemo.ui.activity;
+package com.techjumper.myappdemo.mvp.v.activity;
 
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -11,11 +11,14 @@ import com.techjumper.corelib.utils.file.PreferenceUtils;
 import com.techjumper.corelib.ui.activity.BaseViewActivity;
 import com.techjumper.corelib.utils.common.DateUtils;
 import com.techjumper.corelib.utils.common.JLog;
+import com.techjumper.corelib.utils.rxtools.RxCountdown;
 import com.techjumper.corelib.utils.window.DialogUtils;
-import com.techjumper.myappdemo.presenter.activity.MVPPresenter;
+import com.techjumper.myappdemo.mvp.p.activity.MVPPresenter;
 
 import rx.Observable;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * * * * * * * * * * * * * * * * * * * * * * *
@@ -34,7 +37,6 @@ public class MVPActivity extends BaseViewActivity<MVPPresenter> {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-
     }
 
 
@@ -47,8 +49,25 @@ public class MVPActivity extends BaseViewActivity<MVPPresenter> {
         JLog.d(str);
         PreferenceUtils.save("test", 1.3);
 
+//        Observable
+//                .just("")
+//                .map(s -> {
+//                    JLog.showThreadId("map()");
+//                    return s;
+//                })
+//                .subscribeOn(Schedulers.io())
+//                .map(s1 -> {
+//                    JLog.showThreadId("map2()");
+//                    return s1;
+//                })
+//                .subscribeOn(AndroidSchedulers.mainThread())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(s2 -> JLog.d("完成"));
+
 //        RxCountdown.countdown(5)
 //                .doOnSubscribe(() -> appendLog("开始计时"))
+//                .subscribeOn(AndroidSchedulers.mainThread())
+//                .observeOn(AndroidSchedulers.mainThread())
 //                .subscribe(new Subscriber<Integer>() {
 //                    @Override
 //                    public void onCompleted() {
@@ -75,7 +94,7 @@ public class MVPActivity extends BaseViewActivity<MVPPresenter> {
         Observable.just("异步测试对话框")
                 .map(s -> {
                     JLog.d("map()当前线程：" + Thread.currentThread().getId());
-                    SystemClock.sleep(2000);
+                    SystemClock.sleep(500);
                     return s;
                 })
                 .map(s -> {
@@ -106,6 +125,6 @@ public class MVPActivity extends BaseViewActivity<MVPPresenter> {
         JLog.d("当前时间：" + DateUtils.formatCurrentTime("mm:ss:SSS") + " --- " + str);
     }
 
-    private static class Event {
+    public static class Event {
     }
 }

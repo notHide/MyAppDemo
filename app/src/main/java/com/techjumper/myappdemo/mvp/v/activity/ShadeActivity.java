@@ -1,4 +1,4 @@
-package com.techjumper.myappdemo.ui.activity;
+package com.techjumper.myappdemo.mvp.v.activity;
 
 import android.os.Bundle;
 import android.view.View;

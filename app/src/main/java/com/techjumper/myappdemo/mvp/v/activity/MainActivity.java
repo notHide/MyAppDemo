@@ -1,4 +1,4 @@
-package com.techjumper.myappdemo.ui.activity;
+package com.techjumper.myappdemo.mvp.v.activity;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import com.techjumper.myappdemo.R;
 
 public class MainActivity extends ListActivity {
 
-    private String[] dataList = new String[]{"MVP", "Shade", "FragmentSwitchTest"};
+    private String[] dataList = new String[]{"MVP", "Shade", "FragmentSwitchTest", "Realm"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,9 @@ public class MainActivity extends ListActivity {
                 break;
             case "FragmentSwitchTest":
                 ActivityUtils.start(this, FragmentTestActivity.class);
+                break;
+            case "Realm":
+                ActivityUtils.start(this, RealmActivity.class);
                 break;
         }
         super.onListItemClick(l, v, position, id);

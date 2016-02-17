@@ -1,11 +1,11 @@
-package com.techjumper.myappdemo.presenter.activity;
+package com.techjumper.myappdemo.mvp.p.activity;
 
 import android.os.Bundle;
 
 import com.techjumper.corelib.rx.RxBus;
 import com.techjumper.corelib.mvp.presenter.BaseActivityPresenterImp;
 import com.techjumper.corelib.utils.rxtools.RxUtils;
-import com.techjumper.myappdemo.ui.activity.MVPActivity;
+import com.techjumper.myappdemo.mvp.v.activity.MVPActivity;
 
 import rx.Subscription;
 import rx.functions.Action1;

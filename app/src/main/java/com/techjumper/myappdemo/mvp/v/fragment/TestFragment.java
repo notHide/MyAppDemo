@@ -1,4 +1,4 @@
-package com.techjumper.myappdemo.ui.fragment;
+package com.techjumper.myappdemo.mvp.v.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.techjumper.corelib.mvp.factory.Presenter;
 import com.techjumper.corelib.ui.fragment.BaseViewFragment;
 import com.techjumper.myappdemo.R;
-import com.techjumper.myappdemo.presenter.fragment.TestFragmentPresenter;
+import com.techjumper.myappdemo.mvp.p.fragment.TestFragmentPresenter;
 
 import butterknife.Bind;
 

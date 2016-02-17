@@ -1,4 +1,4 @@
-package com.techjumper.myappdemo.ui.activity;
+package com.techjumper.myappdemo.mvp.v.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +8,9 @@ import com.techjumper.corelib.rx.RxBus;
 import com.techjumper.corelib.ui.activity.BaseFragmentActivity;
 import com.techjumper.corelib.utils.rxtools.RxUtils;
 import com.techjumper.myappdemo.R;
-import com.techjumper.myappdemo.presenter.activity.FragmentTestActivityPresenter;
-import com.techjumper.myappdemo.presenter.fragment.TestFragmentPresenter;
-import com.techjumper.myappdemo.ui.fragment.TestFragment;
+import com.techjumper.myappdemo.mvp.p.activity.FragmentTestActivityPresenter;
+import com.techjumper.myappdemo.mvp.p.fragment.TestFragmentPresenter;
+import com.techjumper.myappdemo.mvp.v.fragment.TestFragment;
 
 import rx.Subscription;
 

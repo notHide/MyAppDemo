@@ -1,9 +1,9 @@
-package com.techjumper.myappdemo.presenter.activity;
+package com.techjumper.myappdemo.mvp.p.activity;
 
 import android.os.Bundle;
 
 import com.techjumper.corelib.mvp.presenter.BaseActivityPresenterImp;
-import com.techjumper.myappdemo.ui.activity.FragmentTestActivity;
+import com.techjumper.myappdemo.mvp.v.activity.FragmentTestActivity;
 
 /**
  * * * * * * * * * * * * * * * * * * * * * * *

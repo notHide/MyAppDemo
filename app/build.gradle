@@ -19,7 +19,7 @@ android {
             proguardFile project.PROGUARD_FILE
         }
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFile project.PROGUARD_FILE
 
         }
@@ -31,6 +31,7 @@ android {
 
     packagingOptions {
         exclude 'META-INF/services/javax.annotation.processing.Processor'
+//        exclude "lib/arm64-v8a/librealm-jni.so"
     }
 }
 

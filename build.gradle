@@ -38,8 +38,9 @@ ext {
     materialDialogs = '0.8.5.4'
     threetenabp = '1.0.3'
     butterKnife = '7.0.1'
-    proguardRules = '1.1.0.0'
+    rxProguardRules = '1.1.0.0'
 
     //lib2
-    realmAndroid = '0.87.0'
+//    realmAndroid = '0.87.0'
+    gson = '2.6.1'
 }
